@@ -13,49 +13,7 @@
     * [Trafic Web (HTTP)](#c-interception-dun-trafic-http)
 * [Annexe 1 : Installation d'une interface graphique sur CentOS 7](#annexe-1--installation-dun-client-graphique)
 
-**Installation et configuration de la VM "patron"** :
-* créer une VM
-  * 512 Mo RAM
-  * 1 CPU
-  * Réseau
-    * une carte NAT
-  * Stockage
-    * disque de 8Go 
-    * `.iso` de CentOS 7 (sur le "contrôleur IDE")
-* installation
-  * se référer au [TP précédent](../3/README.md#i-création-et-utilisation-simples-dune-vm-centos) (n'hésitez pas à m'appeler en cas de doute)
-* wait for installation process to finish
-* redémarrer la VM
-  * vous pouvez enlever le `.iso` du lecteur CD si ce n'est pas fait automatiquement :)
-* configuration VM
-  * se logger avec votre utilisateur
-  * exécutez :
-```bash
-# Désactivation de SELinux
-sudo setenforce 0 # temporaire
-sudo sed -i 's/enforcing/permissive/g' /etc/selinux/config # permanent
-
-# Mise à jour des dépôts
-sudo yum update -y
-
-# Installation de dépôts additionels
-sudo yum install -y epel-release
-
-# Installation de plusieurs paquets réseau dont on se sert souvent
-sudo yum install -y traceroute bind-utils tcpdump nc nano
-
-# Désactivation de la carte NAT au reboot
-sudo nano /etc/sysconfig/network-scripts/ifcfg-enp0s3
-# mettre ONBOOT à NO
-
-# Eteindre la machine
-sudo shutdown now
-```
-
 # I. Mise en place du lab
-
-Le "lab", c'est juste l'environnement nécessaire à notre TP. Vous allez créer des VMs quoi !
-
 ## 1. Création des réseaux
 
 On va créer de nouveaux réseaux host-only. Pour rappel, la création d'un réseau host-only **ajoute une [carte réseau](../../cours/lexique.md#carte-réseau-ou-interface-réseau) sur votre PC**. Vous pouvez la voir avec un `ipconfig` bien sûr ! 
@@ -94,3 +52,51 @@ client  <--net1--> router <--net2--> server
 ```
 
 ---
+
+**Checklist (à faire sur toutes les machines)** :
+* [X] Désactiver SELinux
+  * déja fait dans le patron
+* [X] Installation de certains paquets réseau
+  * déja fait dans le patron
+* [X] **Désactivation de la carte NAT**
+  * déja fait dans le patron
+* [x] [Définition des IPs statiques](../../cours/procedures.md#définir-une-ip-statique)
+* [x] La connexion SSH doit être fonctionnelle
+  * une fois fait, vous avez vos trois fenêtres SSH ouvertes, une dans chaque machine
+* [ ] [Définition du nom de domaine](../../cours/procedures.md##changer-son-nom-de-domaine)
+* [ ] [Remplissage du fichier `/etc/hosts`](../../cours/procedures.md#editer-le-fichier-hosts)
+* [ ] `client1` ping `router1.tp4` sur l'IP `10.1.0.254`
+* [ ] `server1` ping `router1.tp4` sur l'IP `10.2.0.254`
+
+##Definition IPs statiques
+
+Définir une IP statique
+**1. Repérer le nom de l'interface dont on veut changer l'IP**
+```
+ip a
+```
+**2. Modifier le fichier correspondant à l'interface**
+* il se trouve dans `/etc/sysconfig/network-scripts`
+* il porte le nom `ifcfg-<NOM_DE_L'INTERFACE>`
+* on peut le créer s'il n'existe pas
+* exemple de fichier minimaliste qui assigne `192.168.1.19/24` à l'interface `enp0s8`
+  * c'est donc le fichier `/etc/sysconfig/network-scripts/ifcfg-enp0s8`
+```
+NAME=enp0s8
+DEVICE=enp0s8
+
+BOOTPROTO=static
+ONBOOT=yes
+
+IPADDR=192.168.1.19
+NETMASK=255.255.255.0
+```
+**3. Redémarrer l'interface**
+```
+sudo ifdown <INTERFACE_NAME>
+sudo ifup <INTERFACE_NAME>
+```
+
+##La connection ssh doit être fonctionnelle
+
+![Image connection ssh fonctionnelle](https://github.com/lucasreq/TPreseau4/blob/master/images/tp4_connection.JPG)
