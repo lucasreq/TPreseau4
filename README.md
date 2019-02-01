@@ -68,7 +68,7 @@ client  <--net1--> router <--net2--> server
 * [ ] `client1` ping `router1.tp4` sur l'IP `10.1.0.254`
 * [ ] `server1` ping `router1.tp4` sur l'IP `10.2.0.254`
 
-##Definition IPs statiques
+## Definition IPs statiques
 
 Définir une IP statique
 **1. Repérer le nom de l'interface dont on veut changer l'IP**
@@ -97,6 +97,7 @@ sudo ifdown <INTERFACE_NAME>
 sudo ifup <INTERFACE_NAME>
 ```
 
-##La connection ssh doit être fonctionnelle
+## La connection ssh doit être fonctionnelle
+
 
 ![Image connection ssh fonctionnelle](https://github.com/lucasreq/TPreseau4/blob/master/images/tp4_connection.JPG)
