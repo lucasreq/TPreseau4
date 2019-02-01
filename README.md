@@ -63,10 +63,10 @@ client  <--net1--> router <--net2--> server
 * [x] [Définition des IPs statiques](../../cours/procedures.md#définir-une-ip-statique)
 * [x] La connexion SSH doit être fonctionnelle
   * une fois fait, vous avez vos trois fenêtres SSH ouvertes, une dans chaque machine
-* [ ] [Définition du nom de domaine](../../cours/procedures.md##changer-son-nom-de-domaine)
-* [ ] [Remplissage du fichier `/etc/hosts`](../../cours/procedures.md#editer-le-fichier-hosts)
-* [ ] `client1` ping `router1.tp4` sur l'IP `10.1.0.254`
-* [ ] `server1` ping `router1.tp4` sur l'IP `10.2.0.254`
+* [x] [Définition du nom de domaine](../../cours/procedures.md##changer-son-nom-de-domaine)
+* [x] [Remplissage du fichier `/etc/hosts`](../../cours/procedures.md#editer-le-fichier-hosts)
+* [x] `client1` ping `router1.tp4` sur l'IP `10.1.0.254`
+* [x] `server1` ping `router1.tp4` sur l'IP `10.2.0.254`
 
 ##Definition IPs statiques
 
@@ -100,3 +100,29 @@ sudo ifup <INTERFACE_NAME>
 ##La connection ssh doit être fonctionnelle
 
 ![Image connection ssh fonctionnelle](https://github.com/lucasreq/TPreseau4/blob/master/images/tp4_connection.JPG)
+
+##Définition du nom de domaine
+
+**1. Changer le FQDN immédiatement** (temporaire)
+```
+# commande hostname
+sudo hostname <NEW_HOSTNAME>
+# par exemple
+sudo hostname vm1.tp3.b1
+```
+**2. Définir un FQDN quand la machine s'allume** (permanent)
+* écriture du FQDN dans le fichier (avec `nano`) : `sudo nano etc/hostname`
+* **OU** en une seule commande `echo 'vm1.tp1.b3' | sudo tee /etc/hostname`
+
+**3. Pour consulter votre FQDN actuel**
+```
+hostname --fqdn
+```
+![nom de domaine](https://github.com/lucasreq/TPreseau4/blob/master/images/Nom_de_domaine.JPG)
+
+
+
+
+
+
+
