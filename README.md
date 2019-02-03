@@ -126,57 +126,57 @@ hostname --fqdn
 ## 1. ARP
 ### **A. Manip 1**
 
-[ ] 1. vider la table ARP de **toutes** vos machines
-[ ] 2. sur `client1`
-        * vous DEVEZ utiliser SSH
-        * afficher la table ARP
-        * **expliquer la seule ligne visible** (hint : vous êtes connecté à cette VM, non ?... ;) )
-[ ] 3. sur `server1`
-        * vous DEVEZ utiliser SSH
-        * afficher la table ARP
-        * **expliquer la seule ligne visible** (hint : celle-la aussi non ?)
-[ ] 4. sur `client1`
-        * ping `server1`
-        * afficher la table ARP
-        * **expliquer le changement**
-[ ] 5. sur `server1`
-        * afficher la table ARP
-        * **expliquer le changement**
+* [ ] 1. vider la table ARP de **toutes** vos machines
+* [ ] 2. sur `client1`
+    * vous DEVEZ utiliser SSH
+    * afficher la table ARP
+    * **expliquer la seule ligne visible** (hint : vous êtes connecté à cette VM, non ?... ;) )
+* [ ] 3. sur `server1`
+    * vous DEVEZ utiliser SSH
+    * afficher la table ARP
+    * **expliquer la seule ligne visible** (hint : celle-la aussi non ?)
+* [ ] 4. sur `client1`
+    * ping `server1`
+    * afficher la table ARP
+    * **expliquer le changement**
+* [ ] 5. sur `server1`
+    * afficher la table ARP
+    * **expliquer le changement**
 
 ### **B. Manip 2**
 
-[ ] 1. vider la table ARP de **toutes** vos machines
-[ ] 2. sur `router1`
-     * afficher la table ARP
-     * **expliquer le(s) ligne(s)**
-[ ] 3. sur `client1`
-     * ping `server1`
-[ ] 4. sur `router1`
-     * afficher la table ARP
-     * **expliquer le(s) changement(s)**
+* [ ] 1. vider la table ARP de **toutes** vos machines
+* [ ] 2. sur `router1`
+    * afficher la table ARP
+    * **expliquer le(s) ligne(s)**
+* [ ] 3. sur `client1`
+    * ping `server1`
+* [ ] 4. sur `router1`
+    * afficher la table ARP
+    * **expliquer le(s) changement(s)**
 
 ### **C. Manip 3**
 
-[ ] 1. vider la table ARP de **toutes** vos machines
-[ ] 2. sur l'hôte (votre PC)
-     * afficher la table ARP
-     * vider la table ARP 
-     * afficher de nouveau la table ARP
-     * attendre un peu
-     * afficher encore la table ARP
-     * **expliquer le(s) changement(s)** (c'est lié à votre [passerelle](../../cours/lexique.md#passerelle-ou-gateway))
+* [ ] 1. vider la table ARP de **toutes** vos machines
+* [ ] 2. sur l'hôte (votre PC)
+    * afficher la table ARP
+    * vider la table ARP 
+    * afficher de nouveau la table ARP
+    * attendre un peu
+    * afficher encore la table ARP
+    * **expliquer le(s) changement(s)** (c'est lié à votre [passerelle](../../cours/lexique.md#passerelle-ou-gateway))
 
 ### **D. Manip 4**
 
-[ ] 1. vider la table ARP de **toutes** vos machines
-[ ] 2. sur `client1`
-     * afficher la table ARP
-     * activer la carte NAT
-     * joindre internet (`curl google.com` par exemple)
-     * afficher la table ARP
-     * **expliquer le(s) changement(s)**
-       * expliquer quelle machine porte l'IP qui vient de pop dans cette table ARP
-     * **n'oubliez pas de re-désactiver/débrancher la carte NAT**  
+* [ ] 1. vider la table ARP de **toutes** vos machines
+* [ ] 2. sur `client1`
+    * afficher la table ARP
+    * activer la carte NAT
+    * joindre internet (`curl google.com` par exemple)
+    * afficher la table ARP
+    * **expliquer le(s) changement(s)**
+      * expliquer quelle machine porte l'IP qui vient de pop dans cette table ARP
+    * **n'oubliez pas de re-désactiver/débrancher la carte NAT**  
 
 
 ## 2. Wireshark
