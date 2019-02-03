@@ -10,7 +10,6 @@
   * 2. [Interception de trafic avec Wireshark](#2-wireshark)
     * [ARP et `ping`](#a-interception-darp-et-ping)
     * [netcat](#b-interception-dune-communication-netcat)
-* [Annexe 1 : Installation d'une interface graphique sur CentOS 7](#annexe-1--installation-dun-client-graphique)
 
 # I. Mise en place du lab
 ## 1. Création des réseaux
