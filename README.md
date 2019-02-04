@@ -125,6 +125,7 @@ hostname --fqdn
 ### **A. Manip 1**
 
 * [ ] 1. vider la table ARP de **toutes** vos machines ```ip neigh flush all```
+
 * [ ] 2. sur `client1`
     * vous DEVEZ utiliser SSH
     * afficher la table ARP ```ip neigh```
@@ -134,18 +135,18 @@ hostname --fqdn
 
 * [ ] 3. sur `server1`
     * vous DEVEZ utiliser SSH
-    * afficher la table ARP
+    * afficher la table ARP ```ip neigh```
     * **expliquer la seule ligne visible** (hint : celle-la aussi non ?)
-     [Manip 2](https://github.com/lucasreq/TPreseau4/blob/master/images/Manip1_ARPserv1.JPG)
-     Cette ligne représente, l'adresse MAC de la carte réseau du client.
+    [Manip 2](https://github.com/lucasreq/TPreseau4/blob/master/images/Manip1_ARPserv1.JPG)
+    Cette ligne représente, l'adresse MAC de la carte réseau du client.
 
 
 * [ ] 4. sur `client1`
     * ping `server1`
-    * afficher la table ARP
+    * afficher la table ARP ```ip neigh```
     * **expliquer le changement**
 * [ ] 5. sur `server1`
-    * afficher la table ARP
+    * afficher la table ARP ```ip neigh```
     * **expliquer le changement**
 
 ### **B. Manip 2**
