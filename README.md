@@ -140,34 +140,41 @@ hostname --fqdn
     * afficher la table ARP ```ip neigh```
     * **expliquer la seule ligne visible** (hint : celle-la aussi non ?)
 
-![Manip 2](https://github.com/lucasreq/TPreseau4/blob/master/images/Manip1_ARPserv1.JPG)
+![Manip 1](https://github.com/lucasreq/TPreseau4/blob/master/images/Manip1_ARPserv1.JPG)
 
     Cette ligne représente, l'adresse MAC de la carte réseau du client.
 
 
-* [ ] 4. sur `client1`
+* [x] 4. sur `client1`
     * ping `server1`
     * afficher la table ARP ```ip neigh```
     * **expliquer le changement**
-* [ ] 5. sur `server1`
+    
+
+* [x] 5. sur `server1`
     * afficher la table ARP ```ip neigh```
     * **expliquer le changement**
 
 ### **B. Manip 2**
 
-* [ ] 1. vider la table ARP de **toutes** vos machines
-* [ ] 2. sur `router1`
+* [x] 1. vider la table ARP de **toutes** vos machines ```ip neigh flush all```
+
+* [x] 2. sur `router1`
     * afficher la table ARP
     * **expliquer le(s) ligne(s)**
-* [ ] 3. sur `client1`
+     ![manip 1](https://github.com/lucasreq/TPreseau4/blob/master/images/ARPtable_routerflushed.JPG)
+
+* [x] 3. sur `client1`
     * ping `server1`
-* [ ] 4. sur `router1`
+
+* [x] 4. sur `router1`
     * afficher la table ARP
     * **expliquer le(s) changement(s)**
+    ![manip 1](https://github.com/lucasreq/TPreseau4/blob/master/images/ARPping_router_2.JPG)
 
 ### **C. Manip 3**
 
-* [ ] 1. vider la table ARP de **toutes** vos machines
+* [ ] 1. vider la table ARP de **toutes** vos machines ```ip neigh flush all```
 * [ ] 2. sur l'hôte (votre PC)
     * afficher la table ARP
     * vider la table ARP 
