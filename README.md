@@ -3,7 +3,7 @@
 # TP 4 - Spéléologie réseau : descente dans les couches
 
 # Sommaire
-* [Préparation d'une VM "patron"](#préparation-dune-vm-patron)
+
 * I. [Mise en place du lab](#i-mise-en-place-du-lab)
 * II. [Spéléologie Réseau](#ii-spéléologie-réseau)
   * 1. [ARP](#1-arp)
