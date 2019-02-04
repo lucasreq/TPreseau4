@@ -1,2 +1,0 @@
-# FOUGEROLLE Gabriel
-# REQUENA Lucas
