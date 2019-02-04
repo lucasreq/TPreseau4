@@ -124,9 +124,9 @@ hostname --fqdn
 ## 1. ARP
 ### **A. Manip 1**
 
-* [ ] 1. vider la table ARP de **toutes** vos machines ```ip neigh flush all```
+* [x] 1. vider la table ARP de **toutes** vos machines ```ip neigh flush all```
 
-* [ ] 2. sur `client1`
+* [x] 2. sur `client1`
     * vous DEVEZ utiliser SSH
     * afficher la table ARP ```ip neigh```
     * **expliquer la seule ligne visible** (hint : vous êtes connecté à cette VM, non ?... ;) )
@@ -135,7 +135,7 @@ hostname --fqdn
 
     Cette ligne représente, l'adresse MAC de la carte réseau du client.
 
-* [ ] 3. sur `server1`
+* [x] 3. sur `server1`
     * vous DEVEZ utiliser SSH
     * afficher la table ARP ```ip neigh```
     * **expliquer la seule ligne visible** (hint : celle-la aussi non ?)
