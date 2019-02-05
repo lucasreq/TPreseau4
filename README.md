@@ -3,7 +3,7 @@
 # TP 4 - Spéléologie réseau : descente dans les couches
 
 # Sommaire
-
+* [Préparation d'une VM "patron"](#préparation-dune-vm-patron)
 * I. [Mise en place du lab](#i-mise-en-place-du-lab)
 * II. [Spéléologie Réseau](#ii-spéléologie-réseau)
   * 1. [ARP](#1-arp)
@@ -149,7 +149,7 @@ hostname --fqdn
     * ping `server1`
     * afficher la table ARP ```ip neigh```
     * **expliquer le changement**
-    
+
 
 * [x] 5. sur `server1`
     * afficher la table ARP ```ip neigh```
@@ -162,14 +162,22 @@ hostname --fqdn
 * [x] 2. sur `router1`
     * afficher la table ARP
     * **expliquer le(s) ligne(s)**
-     ![manip 1](https://github.com/lucasreq/TPreseau4/blob/master/images/ARPtable_routerflushed.JPG)
+
+    ![manip 1](https://github.com/lucasreq/TPreseau4/blob/master/images/ARPtable_routerflushed.JPG)
 
 * [x] 3. sur `client1`
     * ping `server1`
+    ```shell
+    [root@client1 ~] ip neigh
+    10.1.0.254 dev enp0s3 lladdr 08:00:27:6f:1c:3e STALE
+    10.1.0.1 dev enp0s3 lladdr 0a:00:27:00:00:08 REACHABLE
+    [root@client1 ~]
+    ```
 
 * [x] 4. sur `router1`
     * afficher la table ARP
     * **expliquer le(s) changement(s)**
+
     ![manip 1](https://github.com/lucasreq/TPreseau4/blob/master/images/ARPping_router_2.JPG)
 
 ### **C. Manip 3**
