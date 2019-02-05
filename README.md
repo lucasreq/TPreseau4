@@ -167,16 +167,29 @@ hostname --fqdn
 
 * [x] 3. sur `client1`
     * ping `server1`
+    
+    ```shell
+    [root@client1 ~]# ping 10.2.0.10
+    PING 10.2.0.10 (10.2.0.10) 56(84) bytes of data.
+    64 bytes from 10.2.0.10: icmp_seq=1 ttl=63 time=0.536 ms
+    64 bytes from 10.2.0.10: icmp_seq=2 ttl=63 time=0.539 ms
+    64 bytes from 10.2.0.10: icmp_seq=3 ttl=63 time=1.00 ms
+    64 bytes from 10.2.0.10: icmp_seq=4 ttl=63 time=1.48 ms
+    ^C
+    --- 10.2.0.10 ping statistics ---
+    4 packets transmitted, 4 received, 0% packet loss, time 3001ms
+    rtt min/avg/max/mdev = 0.536/0.890/1.481/0.392 ms
+    ```
+
+* [x] 4. sur `router1`
+    * afficher la table ARP
+    * **expliquer le(s) changement(s)**
     ```shell
     [root@client1 ~] ip neigh
     10.1.0.254 dev enp0s3 lladdr 08:00:27:6f:1c:3e STALE
     10.1.0.1 dev enp0s3 lladdr 0a:00:27:00:00:08 REACHABLE
     [root@client1 ~]
     ```
-
-* [x] 4. sur `router1`
-    * afficher la table ARP
-    * **expliquer le(s) changement(s)**
 
     ![manip 1](https://github.com/lucasreq/TPreseau4/blob/master/images/ARPping_router_2.JPG)
 
